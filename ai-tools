@@ -1,0 +1,27 @@
+from fastapi import FastAPI, Request
+from pydantic import BaseModel
+import random
+
+app = FastAPI()
+
+class Query(BaseModel):
+    text: str
+
+@app.post("/chat")
+async def chat_with_niama(query: Query):
+    user_input = query.text.lower()
+
+    if "who are you" in user_input:
+        return {"reply": "I am Niama AI, your intelligent assistant from Maiduguri."}
+    elif "calculate" in user_input:
+        try:
+            result = eval(user_input.replace("calculate", ""))
+            return {"reply": f"The result is: {result}"}
+        except:
+            return {"reply": "Invalid calculation."}
+    elif "crypto" in user_input:
+        return {"reply": "BTC is currently trending. Always do your research before investing."}
+    elif "how to grow maize" in user_input:
+        return {"reply": "To grow maize: prepare soil, plant seeds, apply fertilizer, and water regularly."}
+    else:
+        return {"reply": "I am still learning. Please ask another question."}
