@@ -1,0 +1,43 @@
+from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
+app = FastAPI()
+
+# Enable CORS for frontend interaction
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Change to frontend URL for production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+class Message(BaseModel):
+    text: str
+
+@app.get("/")
+def root():
+    return {"message": "Niama AI Backend is running."}
+
+@app.post("/chat")
+def chat(message: Message):
+    # Basic example response
+    return {
+        "reply": f"Niama says: You said '{message.text}'"
+    }
+
+@app.post("/upload-image")
+async def upload_image(file: UploadFile = File(...)):
+    return {"filename": file.filename, "status": "Image received"}
+
+@app.post("/upload-voice")
+async def upload_voice(file: UploadFile = File(...)):
+    return {"filename": file.filename, "status": "Voice file received"}
+
+fastapi
+uvicorn
+pydantic
+python-multipart
+
+
