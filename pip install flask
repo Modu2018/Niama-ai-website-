@@ -1,0 +1,19 @@
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return jsonify({"message": "Welcome to Niama AI Backend API!"})
+
+@app.route('/ai-response', methods=['POST'])
+def ai_response():
+    data = request.json
+    question = data.get('question', '')
+    # A dummy response – you can connect this to real AI later
+    return jsonify({
+        "answer": f"You asked: '{question}', this is a placeholder answer."
+    })
+
+if __name__ == '__main__':
+    app.run(debug=True)
