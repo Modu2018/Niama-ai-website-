@@ -1,0 +1,53 @@
+# Overview of Niama AI
+
+Niama AI is a powerful intelligent assistant built for knowledge, creativity, and problem-solving. It integrates:
+- AI tools for communication, creativity, and automation
+- Multilingual support (100+ major languages)
+- Coding, science, medicine, agriculture, and more
+
+Niama is designed for:
+- Researchers
+- Students
+- Doctors
+- Engineers
+- Developers
+- General users seeking smart assistance
+
+## Goal:
+To provide a 24/7 AI companion that can think, respond, and help like a human expert.
+
+# Key Features of Niama AI
+
+- 🧠 Smart AI Brain (multidomain knowledge)
+- 🌐 Multilingual Support (100+ languages)
+- 💻 Coding & Programming Tools
+- 🏥 Medical Advice (non-clinical)
+- 🧪 Science & Chemistry Tools
+- 🚜 Agriculture Knowledge
+- 🏭 Engineering Solutions
+- 📸 Camera, Image & Voice input
+- 🎙️ Voice Assistant Features
+- 💬 Chat Interface
+- 🔒 Cloud-based & Secure
+
+# How to Set Up Niama AI (Local Version)
+
+## Requirements
+- Python 3.10+
+- Node.js
+- Git
+- Internet
+
+## Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Modu2018/Niama-ai-website.git
+
+cd Niama-ai-website
+
+cd backend
+pip install -r requirements.txt
+
+python app.py
+
+
